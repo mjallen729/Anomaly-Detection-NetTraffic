@@ -2,6 +2,8 @@
 line-length = 88
 indent-width = 2
 
+extend-include = ["*.ipynb"]
+
 [format]
 indent-style = "space"
 quote-style = "single"
