@@ -11,8 +11,8 @@ A comparative study of deep learning, ensemble, and clustering approaches for ne
 | Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC | Approach |
 |-------|----------|-----------|--------|----------|---------|----------|
 | **Autoencoder** | **0.908** | **0.919** | **0.921** | **0.920** | **0.951** | Deep Learning |
-| Isolation Forest | 0.792 | 0.849 | 0.819 | 0.876 | Ensemble |
-| K-Means | 0.979 | 0.611 | 0.752 | 0.905 | Clustering |
+| Isolation Forest | 0.787 | 0.792 | 0.849 | 0.819 | 0.876 | Ensemble |
+| K-Means | 0.771 | 0.979 | 0.611 | 0.752 | 0.905 | Clustering |
 
 **Key Finding**: The Autoencoder outperformed traditional unsupervised ML methods by 10% in F1 score, demonstrating superior balanced performance between precision and recall.
 
