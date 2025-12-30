@@ -8,19 +8,34 @@ A comparative study of deep learning, ensemble, and clustering approaches for ne
 
 ### Model Performance Comparison
 
-| Model | Precision | Recall | F1 Score | ROC-AUC | Approach |
-|-------|-----------|--------|----------|---------|----------|
-| **Autoencoder** | **0.919** | **0.921** | **0.920** | **0.951** | Deep Learning |
+| Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC | Approach |
+|-------|----------|-----------|--------|----------|---------|----------|
+| **Autoencoder** | **0.908** | **0.919** | **0.921** | **0.920** | **0.951** | Deep Learning |
 | Isolation Forest | 0.792 | 0.849 | 0.819 | 0.876 | Ensemble |
 | K-Means | 0.979 | 0.611 | 0.752 | 0.905 | Clustering |
 
 **Key Finding**: The Autoencoder outperformed traditional unsupervised ML methods by 10% in F1 score, demonstrating superior balanced performance between precision and recall.
 
 **Performance Highlights**:
-- **92.1%** attack detection rate (recall)
-- **91.9%** precision (low false positive rate)
-- **94x higher** reconstruction error for attacks vs. normal traffic
-- **56%** dimensionality reduction while retaining 95% variance via PCA
+- 92.1% attack detection rate
+- 89.2% normal detection rate
+- 94x higher reconstruction error for attacks vs. normal traffic
+
+---
+
+## Comparison with Existing Research
+
+This project's autoencoder performance compares favorably with published research on the NSL-KDD dataset:
+
+| Research/Model | F1 Score | Precision | Recall | Notes |
+|----------------|----------|-----------|--------|-------|
+| **This Project** | **92.0%** | **91.9%** | **92.1%** | PyTorch, trained on normal traffic only |
+| Various Autoencoders [2] | 89.3-92.3% | - | - | Multiple architectures tested |
+| Denoising Autoencoder [1] | 89.3% | - | - | Dropout-based regularization |
+| VAE + XGBoost [3] | 94.7% | 99.7% | 89.4% | Hybrid supervised approach |
+| Stacked Sparse AE [1] | - | - | - | With SVM classifier |
+
+This project's autoencoder F1 score of 92% places it at the upper range of purely unsupervised/semi-supervised autoencoder approaches, demonstrating effective reconstruction error-based detection without attack-specific training.
 
 ---
 
@@ -65,6 +80,7 @@ is_anomaly = mse_loss > 0.020  # Optimized threshold
 ```
 
 **Results**:
+- Accuracy: **0.908**
 - F1 Score: **0.920**
 - ROC-AUC: **0.951**
 - Normal traffic median error: 0.0034
@@ -172,3 +188,11 @@ is_anomaly = mse_loss > 0.020  # Optimized threshold
 ---
 
 **Dataset Source**: NSL-KDD (improved version of KDD Cup 1999 dataset)
+
+---
+
+## References
+
+1. [Improving Performance of Autoencoder-Based Network Anomaly Detection on NSL-KDD Dataset (IEEE 2021)](https://ieeexplore.ieee.org/document/9552882/)
+2. [Analysis of Autoencoders for Network Intrusion Detection (MDPI 2021)](https://www.mdpi.com/1424-8220/21/13/4294)
+3. [Intrusion Detection in NSL-KDD Dataset Using Hybrid Self-Organizing Map Model (2025)](https://www.techscience.com/CMES/v143n1/60475/html)
