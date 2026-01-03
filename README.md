@@ -1,4 +1,4 @@
-# Network Intrusion Detection Using Machine Learning
+# Network Intrusion Detection Using Unsupervised Learning (NSL-KDD)
 
 A comparative study of deep learning, ensemble, and clustering approaches for network anomaly detection using the NSL-KDD dataset. The Autoencoder-based deep learning model achieved **92% attack detection rate** with balanced precision and recall.
 
